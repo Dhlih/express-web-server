@@ -1,14 +1,14 @@
-const validate = (schema) =>(req,res,next) => {
-    const {error, value} = schema.validate(req.body, {
-        abortEarly: false,
-        allowUnknown: true,
-        stripUnknown: true
-    });
+const validate = (schema) => (req, res, next) => {
+  const { error, value } = schema.validate(req.body, {
+    abortEarly: false,
+    allowUnknown: false,
+    stripUnknown: true,
+  });
 
-    if (error) return next(error);
-    req.validated = value;
-    next();
+  if (error) return next(error);
 
-}
+  req.validated = value;
+  next();
+};
 
 export default validate;

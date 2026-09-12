@@ -4,18 +4,23 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:prod": "NODE_ENV=production node ./src/server.js",
-    "start:dev": "nodemon ./src/server.js",
-    "lint": "eslint ./src"
+    "start:prod": "NODE_ENV=production node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "migrate": "node-pg-migrate",
+    "lint": "eslint ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.1.0",
     "joi": "^18.2.8",
-    "nanoid": "^5.1.5"
+    "nanoid": "^5.1.5",
+    "node-pg-migrate": "^9.0.0",
+    "pg": "^8.23.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
